@@ -8,7 +8,7 @@ import delta from '../images/delta.png';
 import Logo_Negativo from '../images/Logo_Negativo.png';
 import logo_ips from '../images/logo_ips.png';
 
-function Footer() {
+const Footer = () => {
   return (
     <>
        <div class="rectangulo"></div>

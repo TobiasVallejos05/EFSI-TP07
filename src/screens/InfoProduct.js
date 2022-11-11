@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GetProductById } from "../axios/axiosClient"
 import { Card, Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import { ActionTypes, useContextState } from '../contextState'
 
-function InfoProduct() {
+const InfoProduct = () => {
+
     const params = useParams();
-    console.log(params)
     const [product, setProduct] = useState({});
+    const { contextState, setContextState } = useContextState();
 
     useEffect(() => {
         async function fetchData() {
@@ -16,7 +19,8 @@ function InfoProduct() {
         fetchData();
     },[]);
 
-console.log(product)
+    const selectedProduct = contextState.purchase.list.find(item => item.id === product.id)
+
     return (
         
         <Container className='p-3 text-center'>
@@ -33,6 +37,35 @@ console.log(product)
                                 ${product && product.price}
                             </Card.Text>
                         </Card.Body>
+
+                        {
+                        selectedProduct
+                            ?
+                            (
+                                <Button
+                                    variant="danger"
+                                    onClick={() => {
+                                        setContextState({
+                                            type: ActionTypes.SetPurchaseDeleteId,
+                                            value: product.id,
+                                        })
+                                    }}>ELIMINAR DEL CARRITO
+                                </Button>
+                            )
+                            :
+                            (
+                                <Button 
+                                    variant="success"
+                                    onClick={async () => {
+                                        setContextState({
+                                            type: ActionTypes.SetPurchaseList,
+                                            value: product,
+                                        });
+                                    }
+                                    }>AGREGAR AL CARRITO
+                                </Button>
+                            )
+                        }
                     </Card>
                 </div>
     

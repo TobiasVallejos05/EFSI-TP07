@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const GetAllProducts= async () =>{
-    return axios.get(`https://dummyjson.com/products?limit=6`,)
+    return axios.get(`https://dummyjson.com/products`)
     .then(function(res){
         return res
     })
@@ -11,7 +11,7 @@ export const GetAllProducts= async () =>{
 }
 
 export const GetProductById= async (id) =>{
-    return axios.get(`https://dummyjson.com/products/${id}`,)
+    return axios.get(`https://dummyjson.com/products/${id}`)
     .then(function(res){
         return res
     })

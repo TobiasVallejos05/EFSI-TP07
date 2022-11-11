@@ -1,7 +1,7 @@
 import Carousel from "../components/Carousel"
 import Products from "../components/Products"
 
-function Home() {
+const Home = () => {
 
     return (
         <>

@@ -1,8 +1,8 @@
 import { Card, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-function Cards(props) {
-    console.log(props.element)
+const Cards = (props) => {
     return (
 
         <Container className='p-3 text-center'>
@@ -26,6 +26,13 @@ function Cards(props) {
 
     )
 }
+
+Cards.propTypes = {
+    id: PropTypes.number,
+    thumbnail: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    price: PropTypes.number,
+}
+
 export default Cards;
-
-

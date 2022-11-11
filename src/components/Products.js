@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { GetAllProducts } from "../axios/axiosClient"
 import { Row, Container } from 'react-bootstrap';
 import Cards from './Cards';
+import PropTypes from 'prop-types';
 
-function Products() {
+const Products = (props) => {
 
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
-            const res = await GetAllProducts();
+            const res = await GetAllProducts(props.number);
             setProduct(res.data.products);
         }
         fetchData();
@@ -25,6 +26,10 @@ function Products() {
                 </Row>
             </Container>
     );
+}
+
+Products.propTypes = {
+    number: PropTypes.number.isRequired
 }
 
 export default Products;

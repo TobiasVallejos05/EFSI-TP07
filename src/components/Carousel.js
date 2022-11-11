@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import slider from '../images/slider.png';
 
-function CarouselCasero() {
+const CustomCarousel = () => {
   return (
     <Carousel>
       <Carousel.Item>
@@ -43,4 +43,4 @@ function CarouselCasero() {
     </Carousel>
   );
 }
-export default CarouselCasero;
+export default CustomCarousel;
