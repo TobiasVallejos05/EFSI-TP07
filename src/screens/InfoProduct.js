@@ -17,7 +17,7 @@ const InfoProduct = () => {
             setProduct(res.data);
         }
         fetchData();
-    },[]);
+    }, []);
 
     const selectedProduct = contextState.purchase.list.find(item => item.id === product.id)
 
@@ -38,23 +38,18 @@ const InfoProduct = () => {
                             </Card.Text>
                         </Card.Body>
 
-                        {
-                        selectedProduct
-                            ?
-                            (
-                                <Button
-                                    variant="danger"
-                                    onClick={() => {
-                                        setContextState({
-                                            type: ActionTypes.SetPurchaseDeleteId,
-                                            value: product.id,
-                                        })
-                                    }}>ELIMINAR DEL CARRITO
-                                </Button>
-                            )
-                            :
-                            (
-                                <Button 
+                        {selectedProduct ? (
+                            <Button 
+                                variant="danger" 
+                                onClick={() => {
+                                    setContextState({
+                                        type: ActionTypes.SetPurchaseDeleteId,
+                                        value: product.id,
+                                    })
+                                }}>
+                            ELIMINAR DEL CARRITO
+                            </Button> ) : (
+                            <Button 
                                     variant="success"
                                     onClick={async () => {
                                         setContextState({
@@ -68,7 +63,6 @@ const InfoProduct = () => {
                         }
                     </Card>
                 </div>
-    
         </Container>
 
     )

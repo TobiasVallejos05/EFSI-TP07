@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GetAllProducts } from "../axios/axiosClient"
 import { Row, Container } from 'react-bootstrap';
 import Cards from './Cards';

@@ -11,10 +11,11 @@ const CustomNavbar = () => {
       <Container>
       <img src={logo} alt="" width="114"/>
           <Nav className="ms-auto" >
-              <Nav.Link className="nav-link active" to="">INICIO</Nav.Link>
-              <Nav.Link className="nav-link active" to="/about">QUIENES SOMOS</Nav.Link>
-              <Nav.Link className="nav-link active" to="/products">PRODUCTOS</Nav.Link>
-              <Nav.Link className="nav-link active" to="/contact">CONTACTO</Nav.Link>
+              <Nav.Link className="nav-link active" to="Home">INICIO</Nav.Link>
+              <Nav.Link className="nav-link active" to="/About">QUIENES SOMOS</Nav.Link>
+              <Nav.Link className="nav-link active" to="/Products">PRODUCTOS</Nav.Link>
+              <Nav.Link className="nav-link active" to="/Contact">CONTACTO</Nav.Link>
+              <Nav.Link className="nav-link active" to="/Purchase">COMPRA</Nav.Link>
           </Nav>
       </Container>
   </Navbar>
