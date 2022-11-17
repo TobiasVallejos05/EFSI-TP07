@@ -26,8 +26,6 @@ root.render(
           </Route>
         </Routes>
       </ContextProvider>
-      
     </BrowserRouter>
-
   </React.StrictMode>
 );

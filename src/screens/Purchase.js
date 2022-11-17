@@ -13,9 +13,11 @@ const Purchase = () => {
 
     return (
         <Container>
-            <h5>Productos comprados</h5>
+            <br/>
+            <h5>Productos comprados</h5><br/>
             <h6>La cantidad de productos en el carrito es: {contextState.purchase.length}</h6>
             <h6>El precio total es ${purchasePrice}</h6>
+            <br/>
         </Container>
     );
 }

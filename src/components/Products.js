@@ -17,14 +17,14 @@ const Products = (props) => {
     }, []);
 
     return (
-             <Container>
-                <br></br>
-                   <h5>Productos destacados</h5>
-                <Row md={3}>
-                    {product && product.map(item => <Cards key={item.id} element={item}/>
-                    )}
-                </Row>
-            </Container>
+        
+        <Container>
+        <br/>
+        <h5>Productos destacados</h5>
+            <Row md={3}>
+                {product && product.map(item => <Cards key={item.id} element={item}/>)}
+            </Row>
+        </Container>
     );
 }
 
