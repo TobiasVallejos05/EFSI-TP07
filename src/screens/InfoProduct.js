@@ -19,7 +19,7 @@ const InfoProduct = () => {
         fetchData();
     }, []);
 
-    const selectedProduct = contextState.purchase.list.find(item => item.id === product.id)
+    const selectedProduct = contextState.purchase.find(item => item.id === product.id)
 
     return (
         
@@ -38,29 +38,9 @@ const InfoProduct = () => {
                             </Card.Text>
                         </Card.Body>
 
-                        {selectedProduct ? (
-                            <Button 
-                                variant="danger" 
-                                onClick={() => {
-                                    setContextState({
-                                        type: ActionTypes.SetPurchaseDeleteId,
-                                        value: product.id,
-                                    })
-                                }}>
-                            ELIMINAR DEL CARRITO
-                            </Button> ) : (
-                            <Button 
-                                    variant="success"
-                                    onClick={async () => {
-                                        setContextState({
-                                            type: ActionTypes.SetPurchaseList,
-                                            value: product,
-                                        });
-                                    }
-                                    }>AGREGAR AL CARRITO
-                                </Button>
-                            )
-                        }
+                        {selectedProduct ? 
+                        (<Button variant="danger" onClick={() => setContextState({type: ActionTypes.SetPurchaseDeleteId, value: product.id})}>Eliminar del carrito</Button>): 
+                        (<Button variant="success" onClick={() => setContextState({type: ActionTypes.SetPurchase, value: product})}>Agregar al carrito</Button>)}
                     </Card>
                 </div>
         </Container>

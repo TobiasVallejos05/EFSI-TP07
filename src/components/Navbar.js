@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../images/logo.png';
+import { Link } from 'react-router-dom';
 
 const CustomNavbar = () => {
 
@@ -11,11 +12,11 @@ const CustomNavbar = () => {
       <Container>
       <img src={logo} alt="" width="114"/>
           <Nav className="ms-auto" >
-              <Nav.Link className="nav-link active" to="Home">INICIO</Nav.Link>
-              <Nav.Link className="nav-link active" to="/About">QUIENES SOMOS</Nav.Link>
-              <Nav.Link className="nav-link active" to="/Products">PRODUCTOS</Nav.Link>
-              <Nav.Link className="nav-link active" to="/Contact">CONTACTO</Nav.Link>
-              <Nav.Link className="nav-link active" to="/Purchase">COMPRA</Nav.Link>
+              <Link className="nav-link active" to="">INICIO</Link>
+              <Link className="nav-link active" to="/About">QUIENES SOMOS</Link>
+              <Link className="nav-link active" to="/Products">PRODUCTOS</Link>
+              <Link className="nav-link active" to="/Contact">CONTACTO</Link>
+              <Link className="nav-link active" to="/Purchase">COMPRA</Link>
           </Nav>
       </Container>
   </Navbar>

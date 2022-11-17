@@ -8,7 +8,7 @@ const About = () => {
             <br/>
             <h5>¿Quienes somos?</h5>
             <h6>
-                Somos una empresa Fabricantes de Muebles con diseños modernos y clásicos. Todos nuestros productos se realizan con materia prima de alta calidad. Envios a todo el país. Atención personalizada.
+                Somos una empresa la cual se especializa en la fabricación de muebles de alta calidad. Atención las 24 horas del día.
             </h6>
             <br/>
         </Container>

@@ -18,10 +18,10 @@ const Contact = () => {
         <Container>
         <Form>
 
-            <h5>Formulario contacto</h5>
+            <h5>Contacto</h5>
 
             <Form.Group controlId="validationCustom01" noValidate onSubmit={handleSubmit}>
-                <Form.Label>Ingrese nombre</Form.Label>
+                <Form.Label>Nombre</Form.Label>
                 <Form.Control
                     maxLength={20}
                     minLength={5}
@@ -32,21 +32,21 @@ const Contact = () => {
             </Form.Group>
 
             <Form.Group controlId="validationCustom02" noValidate onSubmit={handleSubmit}>
-                <Form.Label>Ingrese email</Form.Label>
+                <Form.Label>Correo electrónico</Form.Label>
                 <Form.Control
                     required
                     maxLength={40}
-                    type="text"
+                    type="email"
                     placeholder="Email"
                 />
             </Form.Group>
 
             <Form.Group>
-                <Form.Label>Ingrese texto</Form.Label>
+                <Form.Label>Mensaje</Form.Label>
                 <Form.Control
                       maxLength={255}
                     type="text"
-                    placeholder="Texto"
+                    placeholder="Mensaje"
                 />
             </Form.Group>
 

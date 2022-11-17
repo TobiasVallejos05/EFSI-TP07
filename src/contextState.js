@@ -3,17 +3,13 @@ import { useContext } from "react";
 
 export const initialState = {
     loading: true,
-    purchase: {
-        list: [],
-        deleteId: [],
-    },
+    purchase: []
 };
 
 export const ActionTypes = {
     SetLoading: "SET_LOADING",
-    SetPurchase: "SET_COMPRA",
-    SetPurchaseList: "SET_COMPRA_LISTA",
-    SetPurchaseDeleteId: "SET_COMPRA_ELIMINAR_ID",
+    SetPurchase: "SET_PURCHASE",
+    SetPurchaseDeleteId: "SET_PURCHASE_DELETE_ID"
 };
 
 export const reducer = (state = {}, action) => {
@@ -23,27 +19,16 @@ export const reducer = (state = {}, action) => {
                 ...state,
                 loading: action.value,
             };
-        case ActionTypes.SetPurchase:
-            return {
-                ...state,
-                purchase: action.value,
-            };
-        case ActionTypes.SetPurchaseList:
-            return {
-                ...state,
-                purchase: {
-                    ...state.purchase,
-                    list: [...state.SetPurchaseList, action.value],
-                }
-            };
+            case ActionTypes.SetPurchase:
+                return ({
+                    ...state,
+                    purchase: [...state.purchase, action.value],
+                });
         case ActionTypes.SetPurchaseDeleteId:
-            return {
+            return ({
                 ...state,
-                purchase: {
-                    ...state.purchase,
-                    list: state.SetPurchaseList.filter((product) => product.id !== action.value)
-                }
-            };
+                purchase: state.purchase.filter((item) => item.id !== action.value)
+            });
         default:
             return state;
     }

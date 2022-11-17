@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <Carousel></Carousel>
-            <Products number={6}></Products>
+            <Products></Products>
         </>
     );
 }
